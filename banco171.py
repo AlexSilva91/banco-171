@@ -39,9 +39,9 @@ def processar_escolha(escolha):
         cont_destino=int(input('\nConta de Destino: '))
         valor=float(input('\nValor a transferir: '))
         if Conta.tranfere_valor_entre_contas(cont_origem,cont_destino,valor):
-            print('00000000000000000000000000000\nTransferência realizada com sucesso!')
+            print('00000000000000000000000000000\nTransferência realizada com sucesso!\n00000000000000000000000000000')
         else:
-            print('00000000000000000000000000000\nImpossível realizar transferência!')
+            print('00000000000000000000000000000\nImpossível realizar transferência!\n00000000000000000000000000000')
     elif escolha==4:
         Conta.listar_contas()
     else:
