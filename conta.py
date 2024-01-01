@@ -9,9 +9,10 @@ class Conta:
         self.status=status
         Conta.contas_cadastradas.append(self)
 
+    
     def apresentar(self):
         return '\nNome: {}\nCPF: {}\nConta: {}\nSaldo: {:.2f}\nStatus: {}'.format(self.nome, self.cpf,self.num_conta,self.saldo,self.status)
-
+    
     @classmethod
     def listar_contas(cls):
         for conta in cls.contas_cadastradas:

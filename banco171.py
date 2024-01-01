@@ -9,6 +9,7 @@ def exibir_menu():
     print('* 3 - TED')
     print('* 4 - Listar contas')
     print('* 5 - Créditar juros em conta')
+    print('* 6 - Buscar conta')
     print('*********BANCO-171***********\n')
 
 def processar_escolha(escolha):
@@ -24,6 +25,8 @@ def processar_escolha(escolha):
         op_contas.listar_contas()
     elif escolha==5:
         op_contas.render_juros_sob_saldo()
+    elif escolha==6:
+        op_contas.buscar_conta()
     else:
         print('\nOpção inválida! Tente novamente.\n')
 

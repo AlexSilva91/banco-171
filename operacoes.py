@@ -52,3 +52,13 @@ class op_contas:
                 print('\nJuros créditados em conta!')
         else:
             print('\nConta inexistente!\n')
+
+    @classmethod
+    def buscar_conta(self):
+        num_conta=int(input('Conta: '))
+        conta = Conta.buscar_por_conta(num_conta)
+        if conta:
+            print('\nNome: {}\nCPF: {}\nConta: {}\nSaldo: {:.2f}\nStatus: {}'.format(conta.nome,conta.cpf,conta.num_conta,conta.saldo,conta.status))
+        else:
+            print('\nConta não localizada!')
+        
