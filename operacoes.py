@@ -47,7 +47,7 @@ class op_contas:
         conta = Conta.buscar_por_conta(num_conta)
         if conta:
             if conta.saldo>0:
-                novo_valor=conta.saldo*0.005
+                novo_valor=conta.saldo*0.07
                 conta.saldo+=novo_valor
                 print('\nJuros créditados em conta!')
         else:
