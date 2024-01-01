@@ -40,3 +40,15 @@ class op_contas:
     def listar_contas(self):
         return Conta.listar_contas()
 
+
+    @classmethod
+    def render_juros_sob_saldo(self):
+        num_conta=int(input('Conta: '))
+        conta = Conta.buscar_por_conta(num_conta)
+        if conta:
+            if conta.saldo>0:
+                novo_valor=conta.saldo*0.005
+                conta.saldo+=novo_valor
+                print('\nJuros créditados em conta!')
+        else:
+            print('\nConta inexistente!\n')
