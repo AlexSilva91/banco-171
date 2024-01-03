@@ -23,15 +23,19 @@ class op_contas:
     def deposit(self):
         cont=int(input('\nConta: '))
         deposit=float(input('\nValor de depósito: '))
-        if Conta.atualizar_saldo_por_conta(cont, deposit):
+        senha =int(input('\nDigite sua senha: '))
+        if Conta.atualizar_saldo_por_conta(cont, senha, deposit):
             print('\n******Depósito realizado com sucesso!******')
+        else:
+            print('\n******Erro! Impossível realizar depósito conta ou senha inválida!******')
 
     @classmethod
     def TED(self):
         cont_origem=int(input('\nConta de Origem: '))
         cont_destino=int(input('\nConta de Destino: '))
+        senha =int(input('\nDigite sua senha: '))
         valor=float(input('\nValor a transferir: '))
-        if Conta.tranfere_valor_entre_contas(cont_origem,cont_destino,valor):
+        if Conta.tranfere_valor_entre_contas(cont_origem, senha,cont_destino,valor):
             print('\n00000000000000000000000000000\nTransferência realizada com sucesso!\n00000000000000000000000000000')
         else:
             print('\n00000000000000000000000000000\nImpossível realizar transferência!\n00000000000000000000000000000')
