@@ -49,3 +49,8 @@ class Conta:
         else:
             return False
         
+    @classmethod
+    def remover_conta(self, num_conta):
+        conta=self.buscar_por_conta(num_conta)
+        self.contas_cadastradas.remove(conta)
+        

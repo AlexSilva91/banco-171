@@ -1,5 +1,4 @@
 from conta import Conta
-from conta import Conta
 
 class op_contas:
 
@@ -65,4 +64,18 @@ class op_contas:
             print('\nNome: {}\nCPF: {}\nConta: {}\nSaldo: {:.2f}\nStatus: {}'.format(conta.nome,conta.cpf,conta.num_conta,conta.saldo,conta.status))
         else:
             print('\nConta não localizada!')
-        
+
+    @classmethod
+    def buscar_por_conta(self):
+        num_conta=int(input('Conta: '))
+        return Conta.buscar_por_conta(num_conta)
+    
+    @classmethod
+    def cancelar_conta(self):
+        cont=self.buscar_por_conta()
+        if cont.saldo==0:
+            Conta.remover_conta(cont.num_conta)
+            print('\nConta cancelada!\n')
+        else:
+            print('\nImpossível cancelar conta!\nSaque o valor do saldo ou trânsfira!\n')
+
