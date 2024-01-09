@@ -52,7 +52,7 @@ class op_contas:
         if conta:
             if conta.saldo>0:
                 novo_valor=conta.saldo*0.07
-                conta.saldo+=novo_valor
+                setattr(conta,"saldo",conta.saldo+novo_valor)
                 print('\nJuros créditados em conta!')
         else:
             print('\nConta inexistente!\n')
